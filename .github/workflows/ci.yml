@@ -1,7 +1,7 @@
 name: continuous-integration-foo
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
