@@ -2,6 +2,7 @@ name: continous-integration-foo
 on:
   push:
     branches:
+      - TEST-1
       - master
 jobs:
   build-and-test:
