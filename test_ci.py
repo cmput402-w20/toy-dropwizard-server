@@ -5,6 +5,14 @@ def test_health_check():
     r = requests.get('http://localhost:8085')
     assert(r.status_code == 404)
 
-# 1. Add two more tests here of your choice. I will explain the API.
-#    Make sure to verify the necessary info, e.g., status code, response data.
-# 2. Add "pytest" as integration testing script as part of Github Actions CI workflow (you've done this before!)
+def test_id_increment():
+    r = requests.get('http://localhost:8085/hello-world')
+    first_id = r.json()['id']
+    r = requests.get('http://localhost:8085/hello-world')
+    second_id = r.json()['id']
+    assert(second_id == first_id+1)
+
+def test_stranger_name():
+    r = requests.get('http://localhost:8085/hello-world')
+    content = r.json()['content']
+    assert(content == 'Hello, Stranger!')
