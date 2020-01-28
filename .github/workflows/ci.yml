@@ -23,6 +23,7 @@ jobs:
       - name: Run tests
         working-directory: .
         run: ./gradlew test
+
   integration-test:
     runs-on: ubuntu-latest
     needs: build-and-test
