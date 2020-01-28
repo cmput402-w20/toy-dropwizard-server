@@ -47,7 +47,7 @@ jobs:
         # Run the integration tests
         - name: Run system tests
           working-directory: .
-          run: pytest
+          run: python3 -m pytest
 
           # Bringing container down
         - name: Purge containers
