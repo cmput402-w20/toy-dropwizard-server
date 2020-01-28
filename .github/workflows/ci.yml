@@ -28,7 +28,7 @@ jobs:
       runs-on: ubuntu-latest
       needs: build-and-test # make sure unit test is runing  first
       steps:
-        -uses: actions/checkout@v1
+        - uses: actions/checkout@v1
         # 1. Run docker compose (hint 'up')
         # 2. Run python action (search online) and install pytest + requests
         # 3. Run 'pytest'
